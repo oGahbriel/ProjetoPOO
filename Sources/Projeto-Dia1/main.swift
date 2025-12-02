@@ -71,13 +71,13 @@ class Plano{
     }
 }
 
-let plano: Plano = Plano(nome:"sla")
-let aluno: Aluno = Aluno(nome:"Pedro", email:"pedro@gmail.com", matricula:"SM23", plano:plano)
+let plano: Plano = Plano(nome:"Anual")
+let aluno: Aluno = Aluno(nome:"Gabriel", email:"Gabriel69@gmail.com", matricula:"SM2025", plano:plano)
 
 let descricao: String = aluno.getDescricao()
 print(descricao)
 
-let inst: Instrutor = Instrutor(nome:"Diogo", email:"diogo@gmail.com", especialidade:"Musculacao")
+let inst: Instrutor = Instrutor(nome:"Pedro", email:"pedro67@gmail.com", especialidade:"Musculacao")
 let desc: String = inst.getDescricao()
 print(desc)
 
