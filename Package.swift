@@ -28,6 +28,10 @@ let package = Package(
         .executableTarget(
             name: "Projeto-Dia1"
         ),
+
+         .executableTarget(
+            name: "Projeto-Dia2"
+        ),
     ]
 )
 
