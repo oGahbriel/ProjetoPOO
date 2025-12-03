@@ -1,3 +1,59 @@
+protocol Manutencao {
+    var nomeItem: String {get set}
+    var dataUltimaManutencao: String {get set}
+    func realizarManutencao() -> Bool
+}
+
+class Aparelho: Manutencao{
+    var nomeItem: String
+    var dataUltimaManutencao: String
+    
+    init(nome: String){
+        self.nome = nome
+    }
+    
+    realizarManutencao(){
+        print("A última atualização foi feita em \(dataUltimaManutencao)")
+    }
+}
+
+class Aula{
+    var nome: String
+    var instrutor: Instrutor
+    
+    init(nome: String, instrutor: Instrutor){
+        self.nome = nome
+        self.instrutor = instrutor
+    }
+    
+     func getDescricao() -> String{
+        return """
+        Descricao: 
+        Aula: \(self.nome)
+        Instrutor: \(self.instrutor)
+        """
+    }
+}
+
+class AulaPersonal: Aula{
+    var aluno: Aluno
+    
+    init(nome: String, instrutor: Instrutor, aluno: Aluno){
+        self.aluno = aluno
+        super.init(nome: nome, instrutor: instrutor)
+    }
+    
+    override func getDescricao() -> String{
+       return """
+        Descricao: 
+        Aluno: \(self.aluno)
+        Aula Matriculada: \(nome)
+        Instrutor: \(instrutor)
+        """ 
+    }
+}
+
+
 class AulaColetiva: Aula{
 
     private(set) var alunosInscritos:  [String: Aluno] =[:]
